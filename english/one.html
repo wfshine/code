@@ -1,0 +1,770 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>一年级英语</title>
+  <style>
+    .btns {
+      display: block;
+      position: fixed;
+      bottom: 0;
+      height: 100px;
+      overflow-y: auto;
+    }
+
+    .btns span {
+      display: inline-block;
+      width: 20%;
+      height: 30px;
+      line-height: 30px;
+      text-align: center;
+      border-radius: 10px;
+      background: #80aaf8;
+      color: #fff;
+      margin-bottom: 10px;
+    }
+    .btn-group{
+      display: block;
+      position: fixed;
+      bottom: 0;
+      text-align: center;
+      width:100%;
+    }
+    .btn-group button{
+      display: inline-block;
+    }
+    .content{
+      padding-bottom:100px;
+      font-size:1.5em;
+    }
+  </style>
+    <script>
+        var unit1 = [
+          {
+            en: "hello",
+            cn: "你好"
+          },
+          {
+            en: "aah",
+            cn: "啊"
+          }, {
+            en: "ooh",
+            cn: "嗬"
+          },
+          {
+            en: "I",
+            cn: "我"
+          },
+          {
+            en: "am",
+            cn: "是"
+          },
+          {
+            en: "I’m",
+            cn: "我是"
+          },
+          {
+            en: "I am",
+            cn: "我是"
+          },
+          {
+            en: "goodbye",
+            cn: "再见"
+          },
+          {
+            en: "bye",
+            cn: "再见"
+          },
+          {
+            en: "How are you?",
+            cn: "你好么？你好！"
+          },
+          {
+            en: "woof",
+            cn: "狗发出的吠声"
+          },
+          {
+            en: "no",
+            cn: "不，不是"
+          },
+          {
+            en: "yes",
+            cn: "是，是的"
+          },
+          {
+            en: "sorry",
+            cn: "对不起"
+          },
+          {
+            en: "fine",
+            cn: "（身体）很好"
+          },
+          {
+            en: "thank",
+            cn: "谢谢"
+          },
+          {
+            en: "you",
+            cn: "你;你们"
+          }
+        ];
+        var unit2 = [
+          {
+            en: "what",
+            cn: "什么"
+          },
+          {
+            en: "is",
+            cn: "是"
+          },
+          {
+            en: "What’s",
+            cn: "是什么"
+          },
+          {
+            en: "What is",
+            cn: "是什么"
+          },
+          {
+            en: "your",
+            cn: "你的；你们的"
+          },
+          {
+            en: "name",
+            cn: "名字"
+          },
+          {
+            en: "please",
+            cn: "请"
+          },
+          {
+            en: "ha ha",
+            cn: "哈哈"
+          },
+          {
+            en: "good",
+            cn: "好的"
+          },
+          {
+            en: "morning",
+            cn: "早晨，上午"
+          },
+          {
+            en: "Ms",
+            cn: "女士"
+          },
+          {
+            en: "my",
+            cn: "我的"
+          },
+          {
+            en: "bird",
+            cn: "鸟"
+          },
+          {
+            en: "tweet",
+            cn: "啾啾的叫声"
+          },
+          {
+            en: "boy",
+            cn: "男孩"
+          },
+          {
+            en: "girl",
+            cn: "女孩"
+          },
+          {
+            en: "whoops",
+            cn: "哎哟"
+          },
+          {
+            en: "afternoon",
+            cn: "下午"
+          },
+          {
+            en: "panda",
+            cn: "熊猫"
+          }
+        ];
+        var unit3 = [
+          {
+            en: "sit",
+            cn: "坐"
+          },
+          {
+            en: "down",
+            cn: "向下"
+          },
+          {
+            en: "stand",
+            cn: "站"
+          },
+          {
+            en: "up",
+            cn: "向上"
+          },
+          {
+            en: "open",
+            cn: "打开"
+          },
+          {
+            en: "the",
+            cn: "这（那）个；这（那）些"
+          },
+          {
+            en: "window",
+            cn: "窗户"
+          },
+          {
+            en: "door",
+            cn: "门"
+          },
+          {
+            en: "See you!",
+            cn: "再见"
+          },
+          {
+            en: "point",
+            cn: "指"
+          },
+          {
+            en: "to",
+            cn: "向..."
+          },
+          {
+            en: "aargh",
+            cn: "啊"
+          },
+          {
+            en: "desk",
+            cn: "书桌"
+          },
+          {
+            en: "chair",
+            cn: "椅子"
+          }
+        ];
+        var unit4 = [
+          {
+            en: "it",
+            cn: "女孩"
+          },
+          {
+            en: "It’s",
+            cn: "女孩"
+          },
+          {
+            en: "It is",
+            cn: "女孩"
+          },
+          {
+            en: "red",
+            cn: "女孩"
+          },
+          {
+            en: "aha",
+            cn: "女孩"
+          },
+          {
+            en: "blue",
+            cn: "女孩"
+          },
+          {
+            en: "wow",
+            cn: "女孩"
+          },
+          {
+            en: "yellow",
+            cn: "女孩"
+          },
+          {
+            en: "oh",
+            cn: "女孩"
+          },
+          {
+            en: "colour",
+            cn: "女孩"
+          },
+          {
+            en: "green",
+            cn: "女孩"
+          },
+          {
+            en: "now",
+            cn: "女孩"
+          },
+          {
+            en: "black",
+            cn: "女孩"
+          },
+          {
+            en: "white",
+            cn: "女孩"
+          },
+          {
+            en: "dog",
+            cn: "女孩"
+          },
+          {
+            en: "cat",
+            cn: "女孩"
+          },
+          {
+            en: "and",
+            cn: "女孩"
+          },
+          {
+            en: "hey",
+            cn: "女孩"
+          },
+          {
+            en: "look",
+            cn: "女孩"
+          },
+          {
+            en: "orange",
+            cn: "女孩"
+          }
+        ];
+        var unit5 = [
+          {
+            en: "this",
+            cn: "女孩"
+          },
+          {
+            en: "our",
+            cn: "女孩"
+          },
+          {
+            en: "teacher",
+            cn: "女孩"
+          },
+          {
+            en: "school",
+            cn: "女孩"
+          },
+          {
+            en: "classroom",
+            cn: "女孩"
+          },
+          {
+            en: "Nice to meet you",
+            cn: "女孩"
+          },
+          {
+            en: "child",
+            cn: "女孩"
+          },
+          {
+            en: "that",
+            cn: "女孩"
+          },
+          {
+            en: "bag",
+            cn: "女孩"
+          }
+        ];
+        var unit6 = [
+          {
+            en: "schoolbag",
+            cn: "女孩"
+          },
+          {
+            en: "book",
+            cn: "女孩"
+          },
+          {
+            en: "pen",
+            cn: "女孩"
+          },
+          {
+            en: "pencil",
+            cn: "女孩"
+          },
+          {
+            en: "ruler",
+            cn: "女孩"
+          },
+          {
+            en: "eraser",
+            cn: "女孩"
+          },
+          {
+            en: "pencil case",
+            cn: "女孩"
+          },
+          {
+            en: "crayon",
+            cn: "女孩"
+          }
+        ];
+        var unit7 = [
+          {
+            en: "new",
+            cn: "女孩"
+          },
+          {
+            en: "kite",
+            cn: "女孩"
+          },
+          {
+            en: "or",
+            cn: "女孩"
+          },
+          {
+            en: "not",
+            cn: "女孩"
+          },
+          {
+            en: "isn’t",
+            cn: "女孩"
+          },
+          {
+            en: "is not",
+            cn: "女孩"
+          },
+          {
+            en: "monkey",
+            cn: "女孩"
+          },
+          {
+            en: "monster",
+            cn: "女孩"
+          },
+          {
+            en: "help",
+            cn: "女孩"
+          },
+          {
+            en: "house",
+            cn: "女孩"
+          },
+          {
+            en: "box",
+            cn: "女孩"
+          }
+        ];
+        var unit8 = [
+          {
+            en: "How many",
+            cn: "女孩"
+          },
+          {
+            en: "one",
+            cn: "女孩"
+          },
+          {
+            en: "two",
+            cn: "女孩"
+          },
+          {
+            en: "three",
+            cn: "女孩"
+          },
+          {
+            en: "four",
+            cn: "女孩"
+          },
+          {
+            en: "count",
+            cn: "女孩"
+          },
+          {
+            en: "say",
+            cn: "女孩"
+          },
+          {
+            en: "five",
+            cn: "女孩"
+          },
+          {
+            en: "six",
+            cn: "女孩"
+          },
+          {
+            en: "seven",
+            cn: "女孩"
+          },
+          {
+            en: "eight",
+            cn: "女孩"
+          },
+          {
+            en: "nine",
+            cn: "女孩"
+          },
+          {
+            en: "ten",
+            cn: "女孩"
+          },
+          {
+            en: "pink",
+            cn: "女孩"
+          },
+          {
+            en: "ball",
+            cn: "女孩"
+          },
+          {
+            en: "so",
+            cn: "女孩"
+          },
+          {
+            en: "many",
+            cn: "女孩"
+          },
+          {
+            en: "brown",
+            cn: "女孩"
+          }
+        ];
+        var unit9 = [
+          {
+            en: "How old",
+            cn: "女孩"
+          },
+          {
+            en: "are",
+            cn: "女孩"
+          },
+          {
+            en: "too",
+            cn: "女孩"
+          },
+          {
+            en: "happy",
+            cn: "女孩"
+          },
+          {
+            en: "birthday",
+            cn: "女孩"
+          },
+          {
+            en: "but",
+            cn: "女孩"
+          },
+          {
+            en: "for",
+            cn: "女孩"
+          },
+          {
+            en: "you’re welcome",
+            cn: "女孩"
+          }
+        ];
+        var unit10 = [
+          {
+            en: "father",
+            cn: "女孩"
+          },
+          {
+            en: "daddy",
+            cn: "女孩"
+          },
+          {
+            en: "mother",
+            cn: "女孩"
+          },
+          {
+            en: "grandpa",
+            cn: "女孩"
+          },
+          {
+            en: "grandma",
+            cn: "女孩"
+          },
+          {
+            en: "friend",
+            cn: "女孩"
+          },
+          {
+            en: "his",
+            cn: "女孩"
+          },
+          {
+            en: "car",
+            cn: "女孩"
+          },
+          {
+            en: "sister",
+            cn: "女孩"
+          },
+          {
+            en: "brother",
+            cn: "女孩"
+          },
+          {
+            en: "her",
+            cn: "女孩"
+          }
+        ];
+        var songs = [
+          {
+            en: "again",
+            cn: "女孩"
+          },
+          {
+            en: "all",
+            cn: "女孩"
+          },
+          {
+            en: "can",
+            cn: "女孩"
+          },
+          {
+            en: "cap",
+            cn: "女孩"
+          },
+          {
+            en: "ceiling",
+            cn: "女孩"
+          },
+          {
+            en: "dear",
+            cn: "女孩"
+          },
+          {
+            en: "floor",
+            cn: "女孩"
+          },
+          {
+            en: "hat",
+            cn: "女孩"
+          },
+          {
+            en: "in",
+            cn: "女孩"
+          },
+          {
+            en: "purple",
+            cn: "女孩"
+          },
+          {
+            en: "rainbow",
+            cn: "女孩"
+          },
+          {
+            en: "sing",
+            cn: "女孩"
+          },
+          {
+            en: "zoo",
+            cn: "女孩"
+          }
+        ];
+        var names = [
+          {
+            en: "Amy",
+            cn: "女孩"
+          },
+          {
+            en: "Ben",
+            cn: "女孩"
+          },
+          {
+            en: "Bob",
+            cn: "女孩"
+          },
+          {
+            en: "Jim",
+            cn: "女孩"
+          },
+          {
+            en: "Kami",
+            cn: "女孩"
+          },
+          {
+            en: "Kim",
+            cn: "女孩"
+          },
+          {
+            en: "Lucy",
+            cn: "女孩"
+          },
+          {
+            en: "Sam",
+            cn: "女孩"
+          },
+          {
+            en: "Smart",
+            cn: "女孩"
+          },
+          {
+            en: "Tim",
+            cn: "女孩"
+          },
+          {
+            en: "Tom",
+            cn: "女孩"
+          }
+        ];
+        var data = unit1.concat(unit2).concat(unit3).concat(unit4).concat(unit5).concat(unit6).concat(unit7).concat(unit8).concat(unit9).concat(unit10);
+    
+        ;
+        var data2 = unit1.concat(unit2).concat(unit3).concat(unit4).concat(unit5).concat(unit6).concat(unit7).concat(unit8).concat(unit9).concat(unit10);
+    
+    ;
+      </script>
+</head>
+
+<body>
+  <div id="content" class="content">
+
+  </div>
+  <div class="btn-group">
+      <button onclick="outData()">正序排列</button>
+      <button onclick="shuffleData()">乱序排列</button>
+  </div>
+
+  <!-- <div class="btns">
+    <span>unit1</span>
+    <span>unit2</span>
+    <span>unit3</span>
+    <span>unit4</span>
+    <span>unit5</span>
+    <span>unit6</span>
+    <span>unit7</span>
+    <span>unit8</span>
+    <span>unit9</span>
+    <span>unit10</span>
+    <span>songs</span>
+    <span>names</span>
+  </div> -->
+
+  <script>
+    function shuffle(arr) {
+      for (let i = arr.length - 1; i >= 0; i--) {
+        let rIndex = Math.floor(Math.random() * (i + 1));
+        // 打印交换值
+        // console.log(i, rIndex);
+        let temp = arr[rIndex];
+        arr[rIndex] = arr[i];
+        arr[i] = temp;
+      }
+      return arr;
+    }
+    function outData() {
+      console.log(data)
+      var html = '';
+      for (var i = 0; i < data.length; i++) {
+        html += '<p>' + data[i].en + '</p>'
+      }
+      document.getElementById('content').innerHTML = html;
+    }
+    function shuffleData(){
+      console.log(data2)
+      var dataTemp = shuffle(data2);
+      var html = '';
+      for (var i = 0; i < dataTemp.length; i++) {
+        html += '<p>' + dataTemp[i].en + '</p>'
+      }
+      document.getElementById('content').innerHTML = html;
+    }
+
+  </script>
+</body>
+
+</html>
